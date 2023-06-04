@@ -1,0 +1,14 @@
+name: test action
+description: 'test action example'
+inputs:
+  statement:
+    required: false
+    default: ''
+outputs: {}
+runs:
+  using: "composite"
+  steps:
+    - run: ${{ github.action_path }}/example.sh
+      shell: bash
+      env:
+        STATEMENT: ${{ inputs.statement }}
